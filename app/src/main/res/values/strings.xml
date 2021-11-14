@@ -2,6 +2,10 @@
     <string name="app_name">HelloWorld</string>
     <string name="Superman">Superman</string>
     <string name="name">Clark Kent</string>
-    <string name="poderes_superman">Powers:Super strength, flight, invulnerability, super speed, heat vision, freeze breath, x-ray vision, superhuman hearing, healing factor</string>
+    <string name="poderes_superman">Powers : Super strength, flight, invulnerability, super speed, heat vision, freeze breath, x-ray vision, superhuman hearing, healing factor</string>
     <string name="todo">TODO</string>
+    <string name="registro">Registro de un superheroe</string>
+    <string name="email">Correo electronico</string>
+    <string name="registrar">Registrar</string>
+    <string name="nombre">Nombre:</string>
 </resources>
