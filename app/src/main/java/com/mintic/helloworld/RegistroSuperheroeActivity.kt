@@ -1,28 +1,52 @@
 package com.mintic.helloworld
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
+import com.google.android.material.textfield.TextInputEditText
 
 class RegistroSuperheroeActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_superheroe)
 
-        var registrarButton: Button = findViewById(R.id.registrar_button)
-        //var nombreEditText: EditText = findViewById(R.id.nombre_edit_text)
-        var infoTextView: TextView = findViewById(R.id.info_text_view)
-        var emailEditText: EditText = findViewById(R.id.email_edit_text)
+        val registrarButton: Button = findViewById(R.id.registrar_button)
+        val nombreEditText: EditText = findViewById(R.id.nombre_edit_text)
+        val infoTextView: TextView = findViewById(R.id.info_text_view)
+        val emailEditText: EditText = findViewById(R.id.email_edit_text)
+        val estaturaEditText: TextInputEditText = findViewById(R.id.estatura_edit_text)
+        val masculinoRadioButton:RadioButton = findViewById(R.id.masculino_radio_button)
+        //val femeninoRadioButton:RadioButton = findViewById(R.id.femenino_radio_button)
+        val fuerzaCheckBox:CheckBox = findViewById(R.id.super_fuerzacheck_Box)
+        val velocidadCheckBox:CheckBox = findViewById(R.id.super_velocidad_check_Box)
+        val telequinesisCheckBox:CheckBox = findViewById(R.id.telequinesis_check_Box)
+        val ciudadNacimientoSpinner:Spinner = findViewById(R.id.ciudad_nacimiento_spinner)
+
 
         //registrarButton.setOnClickListener {
             //val nombre = nombreEditText.text
             //infoTextView.text = nombre
         //}
         registrarButton.setOnClickListener {
+            val nombre = nombreEditText.text
             val email = emailEditText.text
-            infoTextView.text = email
+            val estatura : Float = estaturaEditText.text.toString().toFloat()
+            var poderes = ""
+            val ciudadNacimiento = ciudadNacimientoSpinner.selectedItem.toString()
+
+            val genero = if(masculinoRadioButton.isChecked)
+                getString(R.string.masculino)
+            else
+                getString(R.string.femenino)
+
+            if (fuerzaCheckBox.isChecked) poderes = getString(R.string.super_fuerza)
+            if (velocidadCheckBox.isChecked) poderes = poderes + " " + getString(R.string.super_velocidad)
+            if (telequinesisCheckBox.isChecked) poderes = poderes + " " + getString(R.string.telequinesis)
+
+            infoTextView.text = getString(R.string.nombre_info, nombre, estatura, email, genero, poderes, ciudadNacimiento)
+
         }
 
     }
