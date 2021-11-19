@@ -1,12 +1,12 @@
 package com.mintic.helloworld
 
-import android.text.Editable
 
 data class Superheroe(
-    val nombre: String,
-    val email: Editable,
-    val estatura: Float,
-    val poderes: String,
-    val ciudadNacimiento: String,
-    val genero: String,
+    val name: String,
+    val email: String,
+    val powers: String,
+    val alias: String,
+    val city: String,
+    val facebook: String,
+    val occupation: String
 )

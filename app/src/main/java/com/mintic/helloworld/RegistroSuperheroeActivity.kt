@@ -67,7 +67,7 @@ class RegistroSuperheroeActivity : AppCompatActivity() {
 
                 )
 
-                val superheroe = Superheroe(nombre, email, estatura, poderes, ciudadNacimiento, genero)
+                //val superheroe = Superheroe(nombre, email, estatura, poderes, ciudadNacimiento, genero)
 
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("Nombre", nombre)
