@@ -23,8 +23,6 @@ class ListSuperheroesActivity : AppCompatActivity() {
         superHeroesAdapter = SuperHeroesAdapter(listSuperheroes)
 
 
-        //superHeroesRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-
         superHeroesRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             superHeroesRecyclerView.adapter = superHeroesAdapter
