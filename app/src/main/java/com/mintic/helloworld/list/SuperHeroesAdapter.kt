@@ -1,4 +1,4 @@
-package com.mintic.helloworld
+package com.mintic.helloworld.list
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,10 +6,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.mintic.helloworld.R
+import com.mintic.helloworld.model.SuperheroeItem
 import com.squareup.picasso.Picasso
 
 class SuperHeroesAdapter(
-    private val superheroesList: ArrayList<SuperheroeItem>
+    private val superheroesList: ArrayList<SuperheroeItem>,
+    private val onItemClicked: (SuperheroeItem) -> Unit
     ) : RecyclerView.Adapter<SuperHeroesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -19,6 +22,7 @@ class SuperHeroesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val superheroe = superheroesList[position]
+        holder.itemView.setOnClickListener{ onItemClicked(superheroesList[position])}
         holder.bind(superheroe)
 
     }

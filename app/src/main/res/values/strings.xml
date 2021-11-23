@@ -18,6 +18,9 @@
     <string name="super_velocidad">Super Velocidad</string>
     <string name="telequinesis">Telequinesis</string>
     <string name="ciudad_nacimiento">Ciudad de Nacimiento</string>
+    <string name="city">Metropolis</string>
+    <string name="reporter">Reportero</string>
+    <string name="facebook_exmple">facebook.com/superman</string>
 
     <string-array name="Lista_ciudades">
         <item>Ciudad Central</item>

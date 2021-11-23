@@ -1,11 +1,17 @@
-package com.mintic.helloworld
+package com.mintic.helloworld.list
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 //import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+import com.mintic.helloworld.R
+import com.mintic.helloworld.detalle.DetalleActivity
+import com.mintic.helloworld.model.Superheroe
+import com.mintic.helloworld.model.SuperheroeItem
 
 class ListSuperheroesActivity : AppCompatActivity() {
 
@@ -21,7 +27,7 @@ class ListSuperheroesActivity : AppCompatActivity() {
 
         //listSuperheroes = createMockSuperHeroes()
         listSuperheroes = LoadMockSuperHeroesFromJson()
-        superHeroesAdapter = SuperHeroesAdapter(listSuperheroes)
+        superHeroesAdapter = SuperHeroesAdapter(listSuperheroes, onItemClicked = { onSuperheroeCliked(it) })
 
 
         superHeroesRecyclerView.apply {
@@ -31,10 +37,18 @@ class ListSuperheroesActivity : AppCompatActivity() {
         }
     }
 
+    private fun onSuperheroeCliked(superheroe: SuperheroeItem) {
+        Log.d("alias",superheroe.alias)
+        val intent = Intent( this, DetalleActivity::class.java )
+        intent.putExtra("superheroe", superheroe)
+        startActivity(intent)
+
+    }
+
     private fun LoadMockSuperHeroesFromJson() : ArrayList<SuperheroeItem> {
             var superHeroesString: String = applicationContext.assets.open("superheroes.json").bufferedReader().use { it.readText()}
             val gson = Gson()
-            val data = gson.fromJson(superHeroesString,Superheroe::class.java)
+            val data = gson.fromJson(superHeroesString, Superheroe::class.java)
             return data
 
         }

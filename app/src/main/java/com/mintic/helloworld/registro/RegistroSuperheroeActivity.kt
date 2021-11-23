@@ -1,4 +1,4 @@
-package com.mintic.helloworld
+package com.mintic.helloworld.registro
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,12 +7,13 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
+import com.mintic.helloworld.detalle.DetalleActivity
+import com.mintic.helloworld.R
 
 class RegistroSuperheroeActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("Método", "onCreate")
         setContentView(R.layout.activity_registro_superheroe)
 
         val registrarButton: Button = findViewById(R.id.registrar_button)
@@ -69,7 +70,7 @@ class RegistroSuperheroeActivity : AppCompatActivity() {
 
                 //val superheroe = Superheroe(nombre, email, estatura, poderes, ciudadNacimiento, genero)
 
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, DetalleActivity::class.java)
                 intent.putExtra("Nombre", nombre)
                 startActivity(intent)
             }

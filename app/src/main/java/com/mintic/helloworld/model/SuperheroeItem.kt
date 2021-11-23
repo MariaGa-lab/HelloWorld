@@ -1,7 +1,8 @@
-package com.mintic.helloworld
+package com.mintic.helloworld.model
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class SuperheroeItem(
     @SerializedName("alias")
@@ -18,4 +19,4 @@ data class SuperheroeItem(
     val powers: String,
     @SerializedName("urlPicture")
     val urlPicture: String
-)
+) : Serializable
