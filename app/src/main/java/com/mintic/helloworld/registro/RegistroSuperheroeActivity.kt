@@ -3,7 +3,6 @@ package com.mintic.helloworld.registro
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -79,34 +78,5 @@ class RegistroSuperheroeActivity : AppCompatActivity() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d("Método", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("Método", "onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("Método", "onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("Método", "onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("Método", "onDestroy")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("Método", "onRestart")
-    }
 
 }
